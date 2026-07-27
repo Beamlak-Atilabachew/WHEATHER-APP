@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/style.css" />
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div class="weather-app">
+      <header>
+        <form id="search-form">
+          <input
+            type="search"
+            placeholder="Enter a city.."
+            required
+            class="search-input"
+            id="search-input"
+            autocomplete="off"
+          />
+          <button type="submit" class="search-button">Search</button>
+        </form>
+      </header>
+
+      <main>
+        <!-- Current weather -->
+        <div class="weather-app-data" id="weather-data">
+          <div>
+            <h1 class="weather-app-city" id="current-city">Paris</h1>
+            <p class="weather-app-details">
+              <span id="current-date"></span><br />
+              <span id="current-description">–</span><br />
+              Humidity: <strong id="current-humidity">–</strong> &nbsp;|&nbsp;
+              Wind: <strong id="current-wind">–</strong>
+            </p>
+          </div>
+          <div class="weather-app-temperature-container">
+            <img
+              src=""
+              alt="weather icon"
+              class="weather-app-icon"
+              id="current-icon"
+            />
+            <div class="weather-app-temperature" id="current-temperature">–</div>
+            <div class="weather-app-unit">°C</div>
+          </div>
+        </div>
+
+        <!-- 5-day forecast -->
+        <div class="weather-forecast" id="forecast"></div>
+
+        <!-- Error message -->
+        <p class="error-message" id="error-message"></p>
+      </main>
+
+      <footer>
+        <p>
+          This project was coded by
+          <a href="https://github.com/Beamlak-Atilabachew" target="_blank"
+            >Beamlak Atilabachew</a
+          >
+          and is
+          <a
+            href="https://github.com/Beamlak-Atilabachew/WHETHER-APP"
+            target="_blank"
+            >open on GitHub</a
+          >
+          and
+          <a href="#" target="_blank" id="netlify-link">hosted on Netlify</a>
+        </p>
+      </footer>
+    </div>
+
+    <script src="src/script.js"></script>
+  </body>
+</html>
