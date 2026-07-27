@@ -1,0 +1,207 @@
+/* ── Reset / Base ────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f9f7fe;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+}
+
+a {
+  color: #885df1;
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+/* ── App Card ────────────────────────────────────────────────────────────── */
+.weather-app {
+  background: #ffffff;
+  max-width: 620px;
+  margin: 48px auto;
+  box-shadow: 0 30px 50px rgba(65, 50, 100, 0.10);
+  border-radius: 20px;
+  padding: 32px;
+}
+
+/* ── Header / Search ─────────────────────────────────────────────────────── */
+header {
+  border-bottom: 1px solid #f0ecfc;
+  padding-bottom: 24px;
+  margin-bottom: 28px;
+}
+
+#search-form {
+  display: flex;
+  gap: 8px;
+}
+
+.search-input {
+  flex: 1;
+  background-color: #f9f7fe;
+  border: 1.5px solid #e8e0fc;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: inherit;
+  padding: 12px 18px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.search-input:focus { border-color: #885df1; }
+
+.search-button {
+  background: #885df1;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: inherit;
+  padding: 12px 26px;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.search-button:hover { background: #6f45d4; }
+
+/* ── Current Weather ─────────────────────────────────────────────────────── */
+.weather-app-data {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.weather-app-city {
+  margin: 0 0 6px 0;
+  font-size: 40px;
+  font-weight: 700;
+  color: #1a1035;
+  line-height: 1.1;
+}
+
+.weather-app-details {
+  font-size: 15px;
+  color: rgba(39, 33, 66, 0.55);
+  line-height: 1.7;
+  font-weight: 400;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.weather-app-details strong {
+  color: #f65282;
+  font-weight: 600;
+}
+
+/* Right side: icon + temperature */
+.weather-app-temperature-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.weather-app-icon {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.weather-app-temperature {
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 1;
+  color: #1a1035;
+}
+
+.weather-app-unit {
+  font-size: 28px;
+  font-weight: 400;
+  margin-top: 8px;
+  color: #1a1035;
+}
+
+/* ── Error message ───────────────────────────────────────────────────────── */
+.error-message {
+  color: #e03c5a;
+  font-size: 14px;
+  margin: 8px 0 0 0;
+  min-height: 20px;
+}
+
+/* ── Forecast ────────────────────────────────────────────────────────────── */
+.weather-forecast {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #f0ecfc;
+  flex-wrap: wrap;
+}
+
+.weather-forecast-day {
+  flex: 1;
+  min-width: 80px;
+  text-align: center;
+}
+
+.weather-forecast-date {
+  font-size: 13px;
+  color: rgba(39, 33, 66, 0.45);
+  font-weight: 500;
+  margin-bottom: 8px;
+  white-space: nowrap;
+}
+
+.weather-forecast-icon {
+  width: 52px;
+  height: 52px;
+  display: block;
+  margin: 0 auto 8px;
+  object-fit: contain;
+}
+
+.weather-forecast-temperatures {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.weather-forecast-temperature.high {
+  color: #f65282;
+  font-weight: 600;
+}
+
+.weather-forecast-temperature.low {
+  color: rgba(39, 33, 66, 0.45);
+  font-weight: 400;
+}
+
+/* ── Footer ──────────────────────────────────────────────────────────────── */
+footer {
+  border-top: 1px solid #f0ecfc;
+  padding-top: 20px;
+  margin-top: 32px;
+  text-align: center;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .weather-app {
+    margin: 16px;
+    padding: 20px;
+  }
+
+  .weather-app-city { font-size: 30px; }
+  .weather-app-temperature { font-size: 60px; }
+  .weather-app-icon { width: 64px; height: 64px; }
+  .weather-app-unit { font-size: 22px; }
+
+  .weather-forecast { gap: 4px; }
+  .weather-forecast-day { min-width: 56px; }
+}
